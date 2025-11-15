@@ -40,7 +40,7 @@ const About = () => {
 
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
-            <div className="fade-in fade-in-delay-2">
+            <div className="text-center md:text-justify fade-in fade-in-delay-2">
               <div className="prose prose-lg max-w-none">
                 <p className="text-muted-foreground leading-relaxed mb-6">
                   Sou especialista em infraestrutura de TI com mais de 7 anos de experiência na criação e 
