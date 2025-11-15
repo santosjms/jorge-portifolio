@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Professional Portfolio Design System */
+
+@layer base {
+  :root {
+    /* Light theme as default */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 84% 4%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 20% 45%;
+
+    --accent: 210 40% 96%;
+    --accent-foreground: 217 91% 60%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom Portfolio Colors for Light Theme */
+    --hero-gradient: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(260 100% 70%) 100%);
+    --section-bg: 0 0% 98%;
+    --text-primary: 222 84% 4%;
+    --text-secondary: 215 20% 45%;
+    --tech-bg: 210 40% 96%;
+    --tech-border: 220 13% 91%;
+    
+    /* Shadows for light theme */
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-hover: 0 10px 15px -3px hsl(217 91% 60% / 0.1), 0 4px 6px -2px hsl(217 91% 60% / 0.05);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 84% 6%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 84% 6%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 84% 4%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 217 91% 60%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 217 91% 60%;
+
+    /* Custom Portfolio Colors for Dark Theme */
+    --section-bg: 222 84% 3%;
+    --text-primary: 210 40% 98%;
+    --text-secondary: 215 20% 65%;
+    --tech-bg: 217 33% 12%;
+    --tech-border: 217 50% 25%;
+    
+    /* Shadows for dark theme */
+    --shadow-card: 0 4px 6px -1px hsl(222 84% 2% / 0.8), 0 2px 4px -1px hsl(222 84% 2% / 0.6);
+    --shadow-hover: 0 10px 15px -3px hsl(217 91% 60% / 0.2), 0 4px 6px -2px hsl(217 91% 60% / 0.1);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: url('/src/assets/network-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(var(--background) / 0.95);
+    z-index: -1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Button Variants */
+  .hero-button {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-medium transition-all duration-300 
+           bg-primary text-primary-foreground hover:shadow-[var(--shadow-hover)] hover:scale-105 
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  .hero-button-secondary {
+    @apply inline-flex items-center justify-center rounded-lg px-8 py-4 text-base font-medium transition-all duration-300 
+           border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground 
+           focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2;
+  }
+
+  /* Section Titles */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-foreground mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-muted-foreground mb-12 max-w-3xl mx-auto;
+  }
+
+  /* Tech Badge */
+  .tech-badge {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full 
+           bg-[hsl(var(--tech-bg))] border border-[hsl(var(--tech-border))] 
+           text-accent-foreground text-sm font-medium
+           transition-all duration-200 hover:scale-105 hover:shadow-md;
+  }
+
+  /* Card Hover Effects */
+  .project-card {
+    @apply bg-card rounded-xl border border-border p-6 
+           transition-all duration-300 hover:shadow-[var(--shadow-hover)] 
+           hover:-translate-y-2;
+  }
+
+  /* Smooth Fade In Animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-delay-1 { animation-delay: 0.1s; }
+  .fade-in-delay-2 { animation-delay: 0.2s; }
+  .fade-in-delay-3 { animation-delay: 0.3s; }
+  .fade-in-delay-4 { animation-delay: 0.4s; }
+
+  /* Navigation Active State */
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 
+           relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .nav-link.active {
+    @apply text-primary after:w-full;
+  }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary-hover));
+}
