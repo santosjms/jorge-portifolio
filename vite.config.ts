@@ -5,7 +5,7 @@ import svgr from 'vite-plugin-svgr'
 
 
 export default defineConfig(({ mode }) => ({
-  base: '/jorge-portifolio/',
+  base: '/',
   server: {
     host: "::",
     port: 8080,
