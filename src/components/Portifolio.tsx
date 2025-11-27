@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import site1Thumb from "@/assets/infolp-thumb.jpg";
 import site2Thumb from "@/assets/bizidonuts-thumb.jpg";
+import site3Thumb from "@/assets/cyrino-thumb.jpg";
 
 const Portfolio = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -19,48 +20,18 @@ const Portfolio = () => {
       title: "Site Infolp Infraestrutura",
       description: "Website moderno, responsivo e otimizado para conversão, desenvolvido com as melhores práticas de UX/UI.",
       image: site1Thumb,
-      link: "https://santosjms.github.io/infolp-infraestrutura/#/",
+      link: "https://www.infolp.com.br/",
       year: "2025",
       tags: ["TypeScript", "Responsivo", "Moderno"]
-    },
-    {
-      title: "Site Bizi Donuts",
-      description: "Landing page focada em exibição de donuts artesanais com design atrativo e funcional.",
-      image: site2Thumb,
-      link: "https://santosjms.github.io/bizi-donuts/",
-      year: "2025",
-      tags: ["Landing Page", "Serviço", "Design"]
     },{
-      title: "Site Infolp Infraestrutura",
-      description: "Website moderno, responsivo e otimizado para conversão, desenvolvido com as melhores práticas de UX/UI.",
-      image: site1Thumb,
-      link: "https://santosjms.github.io/infolp-infraestrutura/#/",
+      title: "Site Ciryno Contabilidade",
+      description: "Website moderno, paginado, responsivo e otimizado para conversão, desenvolvido com as melhores práticas de UX/UI.",
+      image: site3Thumb,
+      link: "https://www.cyrinocontabilidade.com.br",
       year: "2025",
-      tags: ["React", "Responsivo", "Moderno"]
+      tags: ["Desenvolvido em parceria com evandroacorsi.dev"]
     },
-    {
-      title: "Site Bizi Donuts",
-      description: "Landing page focada em exibição de donuts artesanais com design atrativo e funcional.",
-      image: site2Thumb,
-      link: "https://santosjms.github.io/bizi-donuts/",
-      year: "2025",
-      tags: ["Landing Page", "E-commerce", "Design"]
-    },{
-      title: "Site Infolp Infraestrutura",
-      description: "Website moderno, responsivo e otimizado para conversão, desenvolvido com as melhores práticas de UX/UI.",
-      image: site1Thumb,
-      link: "https://santosjms.github.io/infolp-infraestrutura/#/",
-      year: "2025",
-      tags: ["React", "Responsivo", "Moderno"]
-    },
-    {
-      title: "Site Bizi Donuts",
-      description: "Landing page focada em exibição de donuts artesanais com design atrativo e funcional.",
-      image: site2Thumb,
-      link: "https://santosjms.github.io/bizi-donuts/",
-      year: "2025",
-      tags: ["Landing Page", "E-commerce", "Design"]
-    },
+    
     
   ];
 
